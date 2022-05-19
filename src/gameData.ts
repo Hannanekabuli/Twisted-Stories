@@ -1,22 +1,20 @@
 import { GameStep } from "./interfaces"
 
-const gameStep : gameStep[] = [
+
+export let gamesteps: GameStep[] = [
     {
       id : 1,
       question : "welcommen, Är ni redo?",
-      description : 'Du kan välja!',
       choices : [
           { 
             image: '',
             text: 'Ja',
-            nextIO: 2
+            nextID: 2
         },{ 
             image: '',
             text: 'Nej',
-            nextIO: 3
-        },
-        null,
-        null
+            nextID: 3
+        }
        
       ]
     },
@@ -25,20 +23,17 @@ const gameStep : gameStep[] = [
     {
         id : 2,
         question : "Vem har skappat JavaScript?",
-        description : '',
         choices : [
             { 
               image: '',
               text: 'Brenden Eich',
-              nextIO: 4
+              nextID: 4
           },{ 
               image: '',
               text: 'Elon Musk',
-              nextIO: 3
-          },
-          null,
-          null
-         
+              nextID: 3
+          }
+
         ]
       },
 
@@ -47,19 +42,16 @@ const gameStep : gameStep[] = [
       {
         id : 3,
         question : "Du är inte redo!!!!",
-        description : '',
         choices : [
             { 
               image: '',
               text: 'Ja',
-              nextIO: 2
+              nextID: 2
           },{ 
               image: '',
               text: 'Nej',
-              nextIO: 1
-          },
-          null,
-          null
+              nextID: 1
+          }
          
         ]
       },
@@ -69,24 +61,134 @@ const gameStep : gameStep[] = [
       {
         id : 4,
         question : "Vilken är JavaScript bibliotek?",
-        description : '',
         choices : [
             { 
               image: './src/image/React.png',
               text: 'React JS',
-              nextIO: 5
+              nextID: 5
           },{ 
               image: '',
               text: 'JSX',
-              nextIO: 3
+              nextID: 3
           },
-          null,
-          null
-         
         ]
       },
 
 
+
+      {
+        id : 5,
+        question : "",
+        choices : [
+            { 
+              image: '',
+              text: 'Ja',
+              nextID: 2
+          },{ 
+              image: '',
+              text: 'Nej',
+              nextID: 3
+          }
+         
+        ]
+      },
+
+      
+
+      {
+        id : 6,
+        question : "",
+        choices : [
+            { 
+              image: '',
+              text: 'Ja',
+              nextID: 2
+          },{ 
+              image: '',
+              text: 'Nej',
+              nextID: 3
+          }
+         
+        ]
+      },
+
+      
+
+
+      {
+        id : 7,
+        question : "welcommen, Är ni redo?",
+        choices : [
+            { 
+              image: '',
+              text: 'Ja',
+              nextID: 2
+          },{ 
+              image: '',
+              text: 'Nej',
+              nextID: 3
+          }
+         
+        ]
+      },
+
+      
+
+      {
+        id : 8,
+        question : "welcommen, Är ni redo?",
+        choices : [
+            { 
+              image: '',
+              text: 'Ja',
+              nextID: 2
+          },{ 
+              image: '',
+              text: 'Nej',
+              nextID: 3
+          }
+         
+        ]
+      },
+
+      
+
+      {
+        id : 9,
+        question : "welcommen, Är ni redo?",
+        choices : [
+            { 
+              image: '',
+              text: 'Ja',
+              nextID: 2
+          },{ 
+              image: '',
+              text: 'Nej',
+              nextID: 3
+          }
+         
+        ]
+      },
+
+      
+
+      {
+        id : 10,
+        question : "welcommen, Är ni redo?",
+        choices : [
+            { 
+              image: '',
+              text: 'Ja',
+              nextID: 2
+          },{ 
+              image: '',
+              text: 'Nej',
+              nextID: 3
+          }
+         
+        ]
+      },
+  
       
 
 
