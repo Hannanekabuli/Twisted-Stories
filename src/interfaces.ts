@@ -3,6 +3,7 @@
 export interface GameStep {
     id : number
     question : string
+    image:string
     choices : [
         {
     image : string

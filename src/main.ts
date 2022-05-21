@@ -6,6 +6,7 @@ const app = document.querySelector<HTMLDivElement>('#app')
 
 let currentStep = 1;
 let question = document.querySelector('#question');
+let image = document.querySelector('#image');
 let btn = document.querySelector('#btn');
 
 function update() {
@@ -17,10 +18,10 @@ function update() {
       choices.forEach(function(choice){
 
         if(choice){
-          btn.innerHTML += <button class="answers" data-nextid
-
-          $(choise.text)
-          </button>
+          btn.innerHTML += ` <button class="answers" data-nextid="$(choice.nextID)">
+          <img src="$(choice.image)" class="step--image" with="290">
+          $(choice.text)
+          </button> `
         }
 
       })
