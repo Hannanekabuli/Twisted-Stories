@@ -1,52 +1,80 @@
 import './style.css'
 
-import { gamesteps } from './gameData'
+import { gameDataList } from './gameData'
 
 const app = document.querySelector<HTMLDivElement>('#app')
 
-let currentStep = 1;
-let question = document.querySelector('#question');
-let image = document.querySelector('#image');
-let btn = document.querySelector('#btn');
 
-function update() {
-  gamesteps.forEach(function(value) {
+const textElement = document.querySelector(".question") as HTMLElement | null | undefined
+const choiceOne = document.getElementById('left') as HTMLElement
+const choiceTwo = document.querySelector('#right') as HTMLElement 
 
-    if(value.id == currentStep){
-      let choices = value.choices
-      question.textContent = value.question
-      choices.forEach(function(choice){
 
-        if(choice){
-          btn.innerHTML += ` <button class="answers" data-nextid="$(choice.nextID)">
-          <img src="$(choice.image)" class="step--image" with="290">
-          $(choice.text)
-          </button> `
-        }
 
-      })
-    }
+let gameStep = gameDataList[0]
+
+
+function game(this: HTMLElement, event: MouseEvent) : void {
+  let step: number = 1; 
+  if(this.id == 'left') {
+    step = gameStep.choices.one.path
+  
+  }else if(this.id == 'right') {
+    step = gameStep.choices.two.path
+  }else{
+    console.log('error'); 
+  }
+
+  const foundPath = gameDataList.find( function (nextStep) {
+    return nextStep.id == step;  
+
   })
-  answers()
+
+  if(foundPath){
+   gameStep = foundPath; 
+   render(); 
+  
 }
-update()
 
+if (Step.firstQts && Step.img) {
 
-function answers(){
-  let answers = document.querySelectorAll('.answers')
-  answers.forEach(function(value){
-  value.addEventListener('click',function(){
-    currentStep = value.getAttribute('data-nextid')
-    btn.innerHTML = ''
-    update()
-    console.log(currentStep)
-  })
-})
+  let box = document.getElementById("inputContainer"); 
+
+  let otherBox = document.createElement('section'); 
+  otherBox.classList.add('otherBox'); 
+
+  box?.appendChild(otherBox)
+
+  let img = document.createElement('img')
+  img.classList.add('drinkImg')
+  img.src = Step.img
+
+  otherBox?.appendChild(img)
+
+} 
+
 }
-answers()
+
+function render() {
+  if(gameStep.question){
+    textElement!.innerText = gameStep.question;
+  }
+  if(gameStep.choices.one){
+    choiceOne.innerText = gameStep.choices.one.text;
+  }
+  if(gameStep.choices.two){
+    choiceTwo.innerText = gameStep.choices.two.text;
+  }
+}
 
 
+choiceOne.addEventListener("click", game)  
+choiceTwo.addEventListener("click", game) 
 
 
+function init(): void {
+  
+  render()
+}
 
- 
+init()
