@@ -1,14 +1,12 @@
 import './style.css'
 
+import { GameStep } from './interfaces'
 import { gameDataList } from './gameData'
 
-const app = document.querySelector<HTMLDivElement>('#app')
 
-
-const textElement = document.querySelector(".question") as HTMLElement | null | undefined
+const textElement = document.querySelector(".question") as HTMLElement 
 const choiceOne = document.getElementById('left') as HTMLElement
 const choiceTwo = document.querySelector('#right') as HTMLElement 
-
 
 
 let gameStep = gameDataList[0]
@@ -36,22 +34,6 @@ function game(this: HTMLElement, event: MouseEvent) : void {
   
 }
 
-if (Step.firstQts && Step.img) {
-
-  let box = document.getElementById("inputContainer"); 
-
-  let otherBox = document.createElement('section'); 
-  otherBox.classList.add('otherBox'); 
-
-  box?.appendChild(otherBox)
-
-  let img = document.createElement('img')
-  img.classList.add('drinkImg')
-  img.src = Step.img
-
-  otherBox?.appendChild(img)
-
-} 
 
 }
 
@@ -78,3 +60,6 @@ function init(): void {
 }
 
 init()
+
+
+

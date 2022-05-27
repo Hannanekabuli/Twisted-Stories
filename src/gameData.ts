@@ -2,78 +2,68 @@
 
 export const gameDataList: GameStep[] = [{
     id: 1, 
-    question: "Du sitter i ditt klassrum och din telefon ringer.",
-    image:"",
+    question: "Du sitter i klassrummet och din telefon ringer.",
     choices: {
-        one: {text: 'Du går ut och svara', path: 2},
-        two: {text: 'Svarar inte!', path: 3}
+        one: {text: 'Svara', path: 2},
+        two: {text: 'Svara inte!', path: 3}
     }
 },  
 {
   id: 2, 
-  question: "Din granne ringa dig, säga att ditt hus brinner och kom hit snabbt",
-  image: "",
+  question: "Det är din granne som vill berätta att din lägenhet brinner.",
   choices: {
-          one: {text: 'Du tar min väska och går hem', path: 4},
-          two: {text: 'Uppmärksamma', path: 3}
+          one: {text: 'Gå hem', path: 4},
+          two: {text: 'Bryr dig inte', path: 3}
       }
   },
 {
  id: 3, 
  question: "Men det kommer att ringa igen i din telefon!",
-  image: "",
   choices: {
-      one: {text: 'Du går ut och svara', path: 2},
+      one: {text: 'Svara', path: 2},
       two: {text: 'Svarar inte!', path: 1}
    }
  },
  {
   id: 4, 
-  question: "Brandbilar står utanför ditt hem. Du går in och träffa brandman på trappor.",
+  question: "När du kommer hem så står brandbilar utanför, du träffar en brandman i trappan.",
   choices: {
-        one: {text: 'Fråga son vad har hänt', path: 6},
-        two: {text: 'springa i ditt hem', path: 5}
+        one: {text: 'Fråga vad som har hänt', path: 5},
+        two: {text: 'Spring in i lägenheten', path: 5}
   }
             
  },
  {
   id: 5, 
-  question : "Du är i ditt lägenhet, men det är rök överallt.",
+  question: "Brandmanen berättar att någon glömde att ta ut tårta från ungen och det var helt bränt, så larmet gick. ",
    choices: {
-       one: {text: 'Börja igen', path: 2},
-       two: {text: 'Fortsätt inte', path: 1}
+       one: {text: 'Du känner att du är gammal och tror att du är dement', path: 6},
+       two: {text: 'Du behöver en läkare', path: 6}
   }
  },
- {
-  id: 6, 
-  question: "",
-       choices: {
-          one: {text: '', path: 7},
-          two: {text: '', path: 7}
-      }
-  },
   {
-    id: 7, 
-    question: "",
+    id: 6, 
+    question: "Men du kommer ihåg att du inte bakade tårta på morgonen och det är inte ditt lägenhet, du bor en trapp up!",
          choices: {
-            one: {text: '', path: 7},
-            two: {text: '', path: 7}
+            one: {text: 'Gå in i lägenhet', path: 7},
+            two: {text: 'Förklara för grannen som hon ringde fel', path: 7}
         }
     },
-    {
-      id: 8, 
-      question: "",
-           choices: {
-              one: {text: '', path: 7},
-              two: {text: '', path: 7}
-          }
-      },
       {
-        id: 9, 
-        question: "",
+        id: 7, 
+        question: "Du är i din lägenhet nu.",
              choices: {
-                one: {text: '', path: 7},
-                two: {text: '', path: 7}
+                one: {text: 'Du vill baka en tårta ', path: 8},
+                two: {text: 'Du sitter med dina uppgifter', path: 8}
             }
         },
+          {
+            id: 8, 
+            question: "Du fikar och sitter med dina uppgifter och tackar för spelet!",
+                 choices: {
+                    one: {text: 'Spela igen', path: 1},
+                    two: {text: 'Nej, sluta', path: 8}
+                }
+            },
+           
 ]
