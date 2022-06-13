@@ -1,20 +1,8 @@
-
-
-export interface GameStep {
-    id : number
-    question : string
-    choices : [
-        {
-    text : string
-    nextID : number
-    },{
-        text : string
-        nextID : number
-        }
-    ]
+export interface Step {
+    id: number, 
+    question: string, 
+    answers: {
+       left: {text: string, path: number},
+       right: {text: string, path: number}
+    }
 }
-
-
-
-
-  

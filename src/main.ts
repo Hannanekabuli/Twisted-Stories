@@ -1,29 +1,28 @@
-import './style.css'
-
-import { GameStep } from './interfaces'
-import { gameDataList } from './gameData'
+import './style.css';
+import { gameData } from './gameData';
 
 
-const textElement = document.querySelector(".question") as HTMLElement 
+const textElement = document.querySelector(".question") as HTMLElement
+const choiceTwo = document.querySelector('#right') as HTMLElement  
 const choiceOne = document.getElementById('left') as HTMLElement
-const choiceTwo = document.querySelector('#right') as HTMLElement 
 
 
-let gameStep = gameDataList[0]
+
+let gameStep = gameData[0]
 
 
-function game(this: HTMLElement, event: MouseEvent) : void {
+function game(this: HTMLElement) : void {
   let step: number = 1; 
   if(this.id == 'left') {
-    step = gameStep.choices.one.path
+    step = gameStep.answers.left.path
   
   }else if(this.id == 'right') {
-    step = gameStep.choices.two.path
+    step = gameStep.answers.right.path
   }else{
     console.log('error'); 
   }
 
-  const foundPath = gameDataList.find( function (nextStep) {
+  const foundPath = gameData.find( function (nextStep) {
     return nextStep.id == step;  
 
   })
@@ -41,11 +40,11 @@ function render() {
   if(gameStep.question){
     textElement!.innerText = gameStep.question;
   }
-  if(gameStep.choices.one){
-    choiceOne.innerText = gameStep.choices.one.text;
+  if(gameStep.answers.left){
+    choiceOne.innerText = gameStep.answers.left.text;
   }
-  if(gameStep.choices.two){
-    choiceTwo.innerText = gameStep.choices.two.text;
+  if(gameStep.answers.right){
+    choiceTwo.innerText = gameStep.answers.right.text;
   }
 }
 
