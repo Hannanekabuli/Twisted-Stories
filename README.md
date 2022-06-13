@@ -23,4 +23,8 @@ Krav för godkänt:
 9. Spelet skall ha minst 5 vägskäl/frågor med minst 2 möjliga svar per fråga (alla vägskäl/frågor behöver inte visas för att klara spelet).
 10. Interaktionen ifrån användaren skall ske via ett gränssnitt med knappar som svar på frågorna.
 
+#INSTALL
+1.	npm install
+2.	npm install gsap
+3.	npm run dev
 
